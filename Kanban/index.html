@@ -8,17 +8,26 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="kanban">
 
-        <div class="row">
-            <div class="column">Começar
-                <div></div>
+            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h3>Começar</h3>
+                <div class="task" id="task1" draggable="true" ondragstart="drag(event)">Exemplo 1</div>
+                <div class="task" id="task2" draggable="true" ondragstart="drag(event)">Exemplo 2</div>
             </div>
-            <div class="column">Fazendo</div>
-            <div class="column">Revisão</div>
-            <div class="column">Finalizado</div>
-        </div>
 
+            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h3>Fazendo</h3>
+            </div>
+
+            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h3>Revisão</h3>
+            </div>
+
+            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h3>Finalizado</h3>
+            </div>
     </div>
+
 </body>
 </html>

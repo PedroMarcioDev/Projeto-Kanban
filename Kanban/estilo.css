@@ -1,25 +1,27 @@
 body{
     background-color: beige;
-    display: flexbox;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
 }
-
-.container{
-    width: 80%;
-    margin: auto;
-    padding: auto;
-    border-radius: 8px;
-}
-
-.row{
+.kanban{
     gap: 30px;
     margin-top: 40px;
     display: flex;
 }
 
 .column{
-    flex: 1;
     padding: 10px;
-    background-color: 4px;
-    text-align: center;
+    width: 200px;
+    border-radius: 5px;
     background-color: whitesmoke;
+    box-shadow: 0 0 5px gray;
+    min-height: 200px;
+}
+
+.task{
+    cursor: grab;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
 }
