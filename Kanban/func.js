@@ -23,6 +23,27 @@ function drop(ev){
 
     if (targetColumn) {
         targetColumn.appendChild(task);
+        saveNotes();
     }
 }
 
+function saveNotes(){
+    localStorage.setItem('notes', JSON.stringify(notes));
+}
+
+function displayNotes() {
+    columns.forEach(column => column.innerHTML = column.querySelector('h3').outerHTML);
+    notes.forEach((note, index) =>{
+        const noteElement = document.createElement('div');
+        noteElement.classList.add('task');
+        noteElement.id = `note-${index}`;
+        noteElement.draggable = true;
+        noteElement.ondragstart = drag;
+        noteElement.innerHTML = `
+        <h2>${note.title}</h2>
+        <p>${note.description}</p>
+        `;
+        const editButton = document.createElement('button');
+
+    });
+}
