@@ -50,6 +50,13 @@ function displayNotes() {
             deleteNote(index);
         });
 
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Excluir';
+        deleteButton.addEventListener('click', (e) =>{
+            e.stopPropagation();
+            deleteNote(index);
+        });
+
         noteElement.appendChild(editButton);
         noteElement.appendChild(deleteButton);
         columns[0].appendChild(noteElement);
@@ -58,7 +65,7 @@ function displayNotes() {
 }
 
 //Função para notificação
-function add(){
+function addNote(){
     if (noteTitle.value.trim() === '' || noteDescription.value.trim() === '' ) {
         alert ('Verifique o titulo ou a anatoção se está em branco.');
         return;
@@ -81,3 +88,19 @@ function add(){
     noteDescription.value = '';
 
 }
+
+function editNote(index){
+    const note = notes[index];
+    noteTitle.value = note.title;
+    noteDescription.value = note.description;
+    editIndex = index;
+}
+
+function deleteNote(index) {
+    notes.splice(index, 1);
+    saveNotes();
+    displayNotes();
+}
+
+addNoteBtn.addEventListener('click', addNote);
+displayNotes();
