@@ -44,6 +44,40 @@ function displayNotes() {
         <p>${note.description}</p>
         `;
         const editButton = document.createElement('button');
+        editButton.textContent = 'Editar';
+        editButton.addEventListener('click', (e) =>{
+            e.stopPropagation();
+            deleteNote(index);
+        });
+
+        noteElement.appendChild(editButton);
+        noteElement.appendChild(deleteButton);
+        columns[0].appendChild(noteElement);
 
     });
+}
+
+//Função para notificação
+function add(){
+    if (noteTitle.value.trim() === '' || noteDescription.value.trim() === '' ) {
+        alert ('Verifique o titulo ou a anatoção se está em branco.');
+        return;
+    }
+    const note = {
+        title: noteTitle.value,
+        description: noteDescription.value,
+    };
+
+    if (editIndex === -1) {
+        notes.push(note);
+    } else {
+        notes[editIndex] = note;
+        editIndex = -1;
+    }
+
+    saveNotes();
+    displayNotes();
+    noteTitle.value = '';
+    noteDescription.value = '';
+
 }
