@@ -19,7 +19,9 @@ function drop(ev){
     var data = ev.dataTransfer.getData("text");
     var task = document.getElementById(data);
     var targetColumn = ev.target;
-    while (targetColumn && !targetColumn.classList.contains('column')){}
+    while (targetColumn && !targetColumn.classList.contains('column')){
+        targetColumn = targetColumn.parentNode;
+    }
 
     if (targetColumn) {
         targetColumn.appendChild(task);
@@ -66,13 +68,13 @@ function displayNotes() {
 
 //Função para notificação
 function addNote(){
-    if (noteTitle.value.trim() === '' || noteDescription.value.trim() === '' ) {
+    if (noteTitle.value.trim() === '' || noteDescription.innerHTML.trim() === '' ) {
         alert ('Verifique o titulo ou a anatoção se está em branco.');
         return;
     }
     const note = {
         title: noteTitle.value,
-        description: noteDescription.value,
+        description: noteDescription.value.innerHTML.trim(),
     };
 
     if (editIndex === -1) {
@@ -92,7 +94,7 @@ function addNote(){
 function editNote(index){
     const note = notes[index];
     noteTitle.value = note.title;
-    noteDescription.value = note.description;
+    noteDescription.innerHTML = note.description;
     editIndex = index;
 }
 

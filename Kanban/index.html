@@ -7,20 +7,23 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
+    <div class="container">
+        <div class="note-form">
+            <input type="text" id="note-title" placeholder="Título da Nota">
+            <br>
+            <div id="note-description" contenteditable="true" class="editable" data-placeholder="Descrição da Nota"></div>
+            <br>
+            <button id="add-note-btn"> Adicionar Nota </button>
 
-    <div class="note-form">
-        <input type="text" name="" id="note-title" placeholder="Título da Nota">
-        <textarea  id="note-description" placeholder="Descrição da Nota"></textarea>
-        <button id="add-note-btn"> Adicionar Nota </button>
-
+        </div>
     </div>
 
     <div class="kanban">
 
             <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h3>Começar</h3>
-                <div class="task" id="task1" draggable="true" ondragstart="drag(event)">Exemplo 1</div>
-                <div class="task" id="task2" draggable="true" ondragstart="drag(event)">Exemplo 2</div>
+               <div id="começar"> <p>Começar</p> </div>
+               <!-- <div class="task" id="task1" draggable="true" ondragstart="drag(event)">Exemplo 1</div>
+                <div class="task" id="task2" draggable="true" ondragstart="drag(event)">Exemplo 2</div>-->
             </div>
 
             <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
