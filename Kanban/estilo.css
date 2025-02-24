@@ -12,16 +12,46 @@ body{
     gap: 20px;
     margin-top: 40px;
     display: flex;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .column{
     padding: 10px;
-   width: 200px;
+    width: 200px;
     border-radius: 5px;
-    background-color: whitesmoke;
+   /* background-color: whitesmoke;*/
     box-shadow: 0 0 5px rgb(61, 61, 61);
     min-height: 200px;
     text-align: center;
+    border: 1px solid #ddd;
+}
+
+.column h3 {
+    margin: 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.column[data-column="começo"] h3 {
+    background-color: #007b8f;
+}
+
+.column[data-column="fazendo"] h3 {
+    background-color: #009846;
+}
+
+.column[data-column="revisão"] h3 {
+    background-color: #f4c400;
+    color: black;
+}
+
+.column[data-column="fim"] h3 {
+    background-color: #d81b1b;
 }
 
 .task{
@@ -29,6 +59,7 @@ body{
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
+    background-color: azure;
 }
 
 .container{
@@ -47,8 +78,8 @@ body{
 }
 .note-form input, .editable{
     padding: 5px;
-    border: 2px solid #ccc;
-    border-radius: 3px;
+    border: 2px solid #111010;
+    border-radius: 3px ;
     background: white;
 }
 
@@ -58,10 +89,6 @@ body{
 
 .editable:empty::before{
     content: attr(data-palceholder);
-    color: gray;
+    color: rgb(179, 176, 176);
     display: block;
-}
-
-.começar{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

@@ -19,22 +19,24 @@
     </div>
 
     <div class="kanban">
-
-            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
-               <div id="começar"> <p>Começar</p> </div>
+           
+            <div class="column" data-column="começo" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+                <h3>Começar</h3>
+                 
                <!-- <div class="task" id="task1" draggable="true" ondragstart="drag(event)">Exemplo 1</div>
                 <div class="task" id="task2" draggable="true" ondragstart="drag(event)">Exemplo 2</div>-->
+                
             </div>
 
-            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="column" data-column="fazendo" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h3>Fazendo</h3>
             </div>
 
-            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="column"data-column="revisão" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h3>Revisão</h3>
             </div>
 
-            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="column" data-column="fim" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h3>Finalizado</h3>
             </div>
     </div>
