@@ -14,23 +14,24 @@ function allowDrop(ev) {
 }
 
 //Função para o arrasto das notas
-function drag(ev){
+function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
 //Função para atualizar a posição no localstorage
-function drop(ev){
+function drop(ev) {
     ev.preventDefault();
+
     var data = ev.dataTransfer.getData("text");
     var task = document.getElementById(data);
-    var targetColumn = ev.target;
+    var targetColumn = ev.target.closest('.column');
 
-    while (targetColumn && !targetColumn.classList.contains('column')){
+   /* while (targetColumn && !targetColumn.classList.contains('column')){
         targetColumn = targetColumn.parentNode;
     }
-
+*/
     if (targetColumn) {
-        targetColumn.appendChild(task);
+        targetColumn.querySelector('.task-container').appendChild(task);
         const noteIndex = notes.findIndex(note => `note-${notes.indexOf(note)}` === data);
         if (noteIndex !== -1) {
             notes[noteIndex].column = targetColumn.getAttribute("data-column");
@@ -46,7 +47,9 @@ function saveNotes(){
 
 //  Função que exibe as notas e mantem na posição escolhida
 function displayNotes() {
-    columns.forEach(column => column.innerHTML = column.querySelector('h3').outerHTML);
+    //columns.forEach(column => column.innerHTML = column.querySelector('h3').outerHTML);
+
+    document.querySelectorAll('.task-container').forEach(CSSContainerRule.innerHTML = '');
 
     notes.forEach((note, index) =>{
         const noteElement = document.createElement('div');
@@ -64,7 +67,7 @@ function displayNotes() {
         editButton.textContent = 'Editar';
         editButton.addEventListener('click', (e) =>{
             e.stopPropagation();
-            deleteNote(index);
+            editNote(index);
         });
 
         // Botão de excluir

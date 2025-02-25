@@ -1,6 +1,6 @@
 body{
     background-color: rgb(255, 255, 255);
-    display: flexbox;
+    display: flex;
     justify-content: center;
     height: 100vh;
     align-items:center;
@@ -59,7 +59,14 @@ body{
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
-    background-color: azure;
+    background-color: rgb(255, 255, 255);
+}
+
+.task-container{
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .container{
@@ -88,7 +95,7 @@ body{
 }
 
 .editable:empty::before{
-    content: attr(data-palceholder);
+    content: attr(data-placeholder);
     color: rgb(179, 176, 176);
     display: block;
 }
