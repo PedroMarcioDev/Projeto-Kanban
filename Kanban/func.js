@@ -2,12 +2,12 @@ console.log("func.js carregando");
 
 //Função para as notas
 document.addEventListener('DOMContentLoaded', function(){
-    const columns = document.querySelectorAll('.column');
     let notes = JSON.parse(localStorage.getItem('notes')) || [];
     let editIndex = -1;
     const noteTitle = document.querySelector('#note-title');
     const noteDescription = document.querySelector('#note-description');
     const addNoteBtn = document.querySelector('#add-note-btn');
+    const columns = document.querySelectorAll('.column');
     
     // Adicionando o evento dragover para permitir o drop
     columns.forEach(column => {
@@ -27,10 +27,16 @@ document.addEventListener('DOMContentLoaded', function(){
     // Função para atualizar a posição no localstorage
     function drop(ev) {
         ev.preventDefault();
-
         var data = ev.dataTransfer.getData("text");
         var task = document.getElementById(data);
         var targetColumn = ev.target.closest('.column');
+
+        if (!targetColumn) {
+            targetColumn = ev.target;
+            while (targetColumn && !targetColumn.classList.contains('column')) {
+                targetColumn = targetColumn.parentNode;
+            }
+        }
 
         if (targetColumn) {
             targetColumn.querySelector('.task-container').appendChild(task);
