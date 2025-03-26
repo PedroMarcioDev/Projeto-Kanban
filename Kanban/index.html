@@ -8,39 +8,29 @@
 </head>
 <body>
     <div class="container">
-        <div class="note-form" id="note-form">
+        <div class="note-form">
             <input type="text" id="note-title" placeholder="Título da Nota">
-            <br>
             <div id="note-description" contenteditable="true" class="editable" data-placeholder="Descrição da Nota"></div>
-            <br>
-            <button id="add-note-btn"> Adicionar Nota </button>
-
+            <button id="add-note-btn">Adicionar Nota</button>
         </div>
-    </div>
-
-    <div class="kanban">
-        <!-- <div class="task" id="task1" draggable="true" ondragstart="drag(event)">Exemplo 1</div>
-        <div class="task" id="task2" draggable="true" ondragstart="drag(event)">Exemplo 2</div>-->
-           
-            <div class="column" data-column="começo" draggable="true" ondrop="drop(event)" ondragover="drag(event)"> 
-                <h3>Começar</h3>
-                <div class="task-container"></div>
+        <div class="kanban">
+            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h3>A Fazer</h3>
             </div>
 
-            <div class="column" data-column="fazendo" draggable="true" ondrop="drop(event)" ondragover="drag(event)">
-                <h3>Fazendo</h3>
-                <div class="task-container"></div>
+            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h3>Em Progresso</h3>
             </div>
 
-            <div class="column"data-column="revisão" draggable="true" ondrop="drop(event)"  ondragover="drag(event)">
+            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h3>Revisão</h3>
-                <div class="task-container"></div>
             </div>
 
-            <div class="column" data-column="fim" draggable="true" ondrop="drop(event)"  ondragover="drag(event)">
-                <h3>Finalizado</h3>
-                <div class="task-container"></div>
+            <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h3>Concluído</h3>
             </div>
+            
+        </div>
     </div>
     <script src="func.js"></script>
 </body>

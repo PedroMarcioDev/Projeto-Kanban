@@ -1,101 +1,94 @@
-body{
-    background-color: rgb(255, 255, 255);
+body {
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    align-items:center;
+    background-color: #f4f4f4;
     flex-direction: column;
 }
-
-.kanban{
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
+.container {
     display: flex;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    max-width: 800px;
 }
-
-.column{
+.kanban {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    /*flex-wrap: wrap;*/
+}
+.column {
+    width: 180px;
+    background: white;
     padding: 10px;
-    width: 200px;
     border-radius: 5px;
-   /* background-color: whitesmoke;*/
-    box-shadow: 0 0 5px rgb(61, 61, 61);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     min-height: 200px;
     text-align: center;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
 }
 
 .column h3 {
-    margin: 0;
+    margin: -10px -10px 10px -10px;
     padding: 10px;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
+    color: #f4f4f4;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /*border-bottom: 2px solid #ddd;*/
 }
 
-.column[data-column="começo"] h3 {
-    background-color: #007b8f;
-}
+.column:nth-child(1) h3 {background: rgb(11, 42, 218);} 
+.column:nth-child(2) h3 {background: rgb(32, 194, 32);}
+.column:nth-child(3) h3 {background: rgb(232, 247, 35); color: black;}
+.column:nth-child(4) h3 {background: rgba(228, 9, 9, 0.973);}
 
-.column[data-column="fazendo"] h3 {
-    background-color: #009846;
-}
-
-.column[data-column="revisão"] h3 {
-    background-color: #f4c400;
-    color: black;
-}
-
-.column[data-column="fim"] h3 {
-    background-color: #d81b1b;
-}
-
-.task{
+.task {
+    background: rgb(194, 226, 236);
+    margin-bottom: 10px ;
+    padding: 10px;
     cursor: grab;
-    margin: 10px 0;
-    padding: 10px;
+    border: 1px solid #ccc; 
     border-radius: 5px;
-    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.task-container{
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.task h2 {
+    font-size:  16px;
+    margin: 20px 0;
 }
 
-.container{
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 10px;
-    width: 200px;
-}
-
-.note-form{
+.note-form {
+    justify-items: center;
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
-}
-.note-form input, .editable{
-    padding: 5px;
-    border: 2px solid #111010;
-    border-radius: 3px ;
+    width: 100%;
+    max-width: 300px;
     background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-
+.note-form input, .editable {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+   /* background: white;*/
+}
 .editable {
-    min-height: 20px;
+    min-height: 50px;
 }
-
-.editable:empty::before{
+.editable:empty:before {
     content: attr(data-placeholder);
-    color: rgb(179, 176, 176);
+    color: gray;
     display: block;
 }
