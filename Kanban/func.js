@@ -20,15 +20,20 @@ function drag(ev) {
 //Função para soltar as notas e atualizar a posição
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    var task = document.getElementById(data);
-    var targetColumn = ev.target;
+    const noteId = ev.dataTransfer.getData("text");
+    const task = document.getElementById(noteId);
+
+
+    let targetColumn = ev.target;
     while (targetColumn && !targetColumn.classList.contains('column')) {
         targetColumn = targetColumn.parentNode;
     }
     if (targetColumn) {
-        targetColumn.appendChild(task);
+        const noneIndex = parseInt(noteId.split('-')[1]);
+        const columnIndex = Array.from(columns ).indexOf(targetColumn);
+        notes[noteIndex].columnIndex = columnIndex;
         saveNotes();
+        displayNotes();
     }
 }
 
@@ -37,15 +42,27 @@ function saveNotes() {
     localStorage.setItem('notes', JSON.stringify(notes));
 }
 
+//Função que limpa o formulário após salvar
+function resetForm(){
+    noteTitle.value = '';
+    noteDescription.innerHTML = '';
+    noteColor.value = '#2579e7e0';
+    editIndex = -1;
+}
+
 //Função que exibe as notas  e mntem na posição escolhida
 function displayNotes() {
     columns.forEach(column => column.innerHTML = column.querySelector('h3').outerHTML);
+
+
     notes.forEach((note, index) => {
         const noteElement = document.createElement('div');
         noteElement.classList.add('task');
         noteElement.id = `note-${index}`;
         noteElement.draggable = true;
         noteElement.ondragstart = drag;
+        noteElement.style.backgroundColor = note.color
+
         noteElement.innerHTML = `
             <h2>${note.title}</h2>
             <p>${note.description}</p>
