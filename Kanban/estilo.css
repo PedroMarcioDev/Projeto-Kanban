@@ -4,7 +4,7 @@ body {
     justify-content: flex;
     align-items: flex;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #dbd0a5;
     flex-direction: column;
     margin-left: 100px;
 }
@@ -43,10 +43,10 @@ body {
     /*border-bottom: 2px solid #ddd;*/
 }
 
-.column:nth-child(1) h3 {background: rgb(11, 42, 218);} 
-.column:nth-child(2) h3 {background: rgb(32, 194, 32);}
-.column:nth-child(3) h3 {background: rgb(232, 247, 35); color: black;}
-.column:nth-child(4) h3 {background: rgba(228, 9, 9, 0.973);}
+.column:nth-child(1) h3 {background: rgba(58, 103, 228, 0.84);} 
+.column:nth-child(2) h3 {background: rgba(203, 112, 32, 0.973);}
+.column:nth-child(3) h3 {background: rgb(211, 221, 64); color: black;}
+.column:nth-child(4) h3 {background: rgb(38, 234, 81);}
 
 .task {
     background: rgb(194, 226, 236);
@@ -101,13 +101,13 @@ body {
     color: rgb(255, 255, 255);
     background-color: rgb(90,200, 90);
     padding: 16px;
-    border-radius: 2px;
+    border-radius: 6px;
     border: none;
     box-shadow: 0 0 3px;
 }
 
 .dropbtn:hover{
-    background-color: rgb(49, 111, 49, 0.772);
+    background-color: rgba(79, 165, 79, 0.746);
 
 }
 
@@ -142,16 +142,16 @@ body {
 }
 
 .color-box.baixa{
-    background:blue ;
+    background:#2579e7e0 ;
 }
 
 .color-box.medio{
-    background: greem;
+    background: #1da701;
 }
 
 .color-box.alta{
- background: red;
+ background: #e40b0b;
 }
 .color-box.cancelado{
-    background: orange;
+    background: #ff7402;
 }

@@ -4,6 +4,7 @@ let notes = JSON.parse(localStorage.getItem('notes')) || [];
 let editIndex = -1;
 const noteTitle = document.querySelector('#note-title');
 const noteDescription = document.querySelector('#note-description');
+const noteColor = document.querySelector('#note-color');
 const addNoteBtn = document.querySelector('#add-note-btn');
 const columns = document.querySelectorAll('.column');
 
@@ -29,7 +30,7 @@ function drop(ev) {
         targetColumn = targetColumn.parentNode;
     }
     if (targetColumn) {
-        const noneIndex = parseInt(noteId.split('-')[1]);
+        const noteIndex = parseInt(noteId.split('-')[1]);
         const columnIndex = Array.from(columns ).indexOf(targetColumn);
         notes[noteIndex].columnIndex = columnIndex;
         saveNotes();
