@@ -140,3 +140,18 @@ body {
     margin-right: 2px;
     gap: 2px;
 }
+
+.color-box.baixa{
+    background:blue ;
+}
+
+.color-box.medio{
+    background: greem;
+}
+
+.color-box.alta{
+ background: red;
+}
+.color-box.cancelado{
+    background: orange;
+}

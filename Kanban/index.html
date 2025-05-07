@@ -9,17 +9,17 @@
 <body>
     <div class="dropdown">
         <button class="dropbtn"> Legenda </button>
-            <div class="dropdown-content">
+        <div class="dropdown-content">
 
-                <p><span class="color-box" style="background: #2579e7e0;"></span> Prioridade  Baixa </p>
+            <p><span class="color-box  baixa"></span> Prioridade  Baixa </p>
 
-                <p><span class="color-box" style="background: #1da701;"></span> Prioridade Média </p>
+            <p><span class="color-box medio" ></span> Prioridade Média </p>
 
-                <p><span class="color-box" style="background: #e40b0b;"></span> Prioridade Alta </p>
+            <p><span class="color-box alta"></span> Prioridade Alta </p>
 
-                <p><span class="color-box" style="background: #ff7402;"></span> Cancelado </p>
+            <p><span class="color-box cancelado"></span> Cancelado </p>
 
-            </div>
+        </div>
     </div>
 
 
@@ -28,8 +28,17 @@
         <div class="note-form">
             <input type="text" id="note-title" placeholder="Título da Nota">
             <div id="note-description" contenteditable="true" class="editable" data-placeholder="Descrição da Nota"></div>
+            <select name="Cor" id="note-color" aria-label="Cor">
+                <option value="#2579e7e0"> Azul </option>
+                <option value="#1da701"> Verde </option>
+                <option value="#ff7402"> Laranja </option>
+                <option value="#e40b0b"> Vermelho</option>
+            </select>
+        
+            
             <button id="add-note-btn">Adicionar Nota</button>
         </div>
+
         <div class="kanban">
             <div class="column" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h3>A Fazer</h3>

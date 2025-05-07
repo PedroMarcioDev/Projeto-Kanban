@@ -86,7 +86,7 @@ function displayNotes() {
         
         noteElement.appendChild(editButton);
         noteElement.appendChild(deleteButton);
-        columns[0].appendChild(noteElement);
+        columns[note.columnIndex || 0].appendChild(noteElement);
     });
 }
 
@@ -97,22 +97,23 @@ function addNote() {
         return;
     }
     
-    const note = {
+    const noteData = {
         title: noteTitle.value,
         description: noteDescription.innerHTML.trim(),
+        color: noteColor.value,
+        columnIndex: 0
     };
     
     if (editIndex === -1) {
-        notes.push(note);
+        notes.push(noteData);
     } else {
-        notes[editIndex] = note;
-        editIndex = -1;
+        noteData.columnIndex = notes[editIndex].columnIndex;
+        notes[editIndex] = noteData;
     }
     
     saveNotes();
     displayNotes();
-    noteTitle.value = '';
-    noteDescription.innerHTML = '';
+   resetForm();
 }
 
 //Função para a edição da nota
@@ -120,6 +121,7 @@ function editNote(index) {
     const note = notes[index];
     noteTitle.value = note.title;
     noteDescription.innerHTML = note.description;
+    noteColor.value = note.color;
     editIndex = index;
 }
 
