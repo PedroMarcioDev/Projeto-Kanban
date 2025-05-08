@@ -4,7 +4,7 @@ body {
     justify-content: flex;
     align-items: flex;
     height: 100vh;
-    background-color: #dbd0a5;
+    background-image: linear-gradient(to right , rgba(211, 153, 153) , rgb(150, 124, 167));
     flex-direction: column;
     margin-left: 100px;
 }
@@ -43,17 +43,17 @@ body {
     /*border-bottom: 2px solid #ddd;*/
 }
 
-.column:nth-child(1) h3 {background: rgba(58, 103, 228, 0.84);} 
-.column:nth-child(2) h3 {background: rgba(203, 112, 32, 0.973);}
-.column:nth-child(3) h3 {background: rgb(211, 221, 64); color: black;}
-.column:nth-child(4) h3 {background: rgb(38, 234, 81);}
+.column:nth-child(1) h3 {background: rgba(43, 171, 230, 0.909);} 
+.column:nth-child(2) h3 {background: rgba(218, 125, 43, 0.973);}
+.column:nth-child(3) h3 {background: rgb(207, 35, 35); color: black;}
+.column:nth-child(4) h3 {background: rgb(24, 207, 64);}
 
 .task {
     background: rgb(194, 226, 236);
     margin-bottom: 10px ;
     padding: 10px;
     cursor: grab;
-    border: 1px solid #ccc; 
+    border: 1px solid #111010; 
     border-radius: 5px;
     text-align: left;
     font-size: 15px;
@@ -79,7 +79,7 @@ body {
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin-left: 350px;
+    margin-left: 380px;
 }
 .note-form input, .editable {
     width: 100%;
@@ -98,17 +98,19 @@ body {
 }
 
 .dropbtn{
-    color: rgb(255, 255, 255);
-    background-color: rgb(90,200, 90);
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
     padding: 16px;
     border-radius: 6px;
     border: none;
-    box-shadow: 0 0 3px;
+    box-shadow:3px;
+    border: solid rgb(88, 181, 96) ;
 }
 
 .dropbtn:hover{
-    background-color: rgba(79, 165, 79, 0.746);
-
+    background-color: rgb(88, 181, 96);
+    color: white;
+    box-shadow: 0 8px 10px 0 rgba(186, 186, 186, 0.1);
 }
 
 .dropbtn:hover +.dropdown-content {
@@ -124,7 +126,7 @@ body {
 .dropdown-content{
     display: none;
     position: absolute;
-    background-color: #f0e4d6;
+    background-color: #fffffffc;
     min-width: 90px;
     box-shadow: 0px 8px 16px 0px;
     padding: 12px 16px;
